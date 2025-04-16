@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Intro Video</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .intro-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      background: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 1s ease-out;
+    }
+
+    .intro-video.fade-out {
+      opacity: 0;
+    }
+
+    .intro-video video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <div class="intro-video" id="intro">
+    <video id="introVideo" autoplay muted playsinline>
+      <source src="./assets/Copy of Bluez Logo Animation (online-video-cutter.com).mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <script>
+    const intro = document.getElementById("intro");
+    const video = document.getElementById("introVideo");
+
+    function goToMain() {
+      intro.classList.add("fade-out");
+      setTimeout(() => {
+        sessionStorage.setItem("introPlayed", "true");
+        window.location.href = "index.html";
+      }, 1000);
+    }
+
+    // Fallback if metadata doesn't load
+    const fallbackTimeout = setTimeout(goToMain, 7000);
+
+    video.addEventListener("loadedmetadata", () => {
+      clearTimeout(fallbackTimeout);
+      const duration = Math.max(4, video.duration);
+      setTimeout(goToMain, duration * 1000);
+    });
+  </script>
+</body>
+</html>

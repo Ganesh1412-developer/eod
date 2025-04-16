@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="./style.css">
+  <title>Analysis - Bluez Infomatic Solution</title>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    .analysis-section {
+      padding: 40px 30px;
+      transition: margin-left 0.3s;
+    }
+
+    .analysis-title {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      background-color: #e8f0fe;
+      border-left: 6px solid #007bff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #1d3557;
+      font-size: 18px;
+    }
+
+    .service-card p {
+      margin: 0;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .analysis-section {
+        margin-left: 0;
+        padding: 20px;
+      }
+    }
+
+    .sidebar {
+      width: 250px;
+      transition: width 0.3s;
+      float: left;
+    }
+
+    .sidebar.collapsed {
+      width: 60px;
+    }
+
+    #Content {
+      margin-left: 250px;
+      transition: margin-left 0.3s;
+    }
+
+    #Content.expanded {
+      margin-left: 60px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<section id="sidebar" class="sidebar">
+  <a href="#" class="brand">
+    <i class="bx">
+      <img src="./Web logos.png" width="40%" alt="Brand Logo" />
+    </i>
+    <span class="text"></span>
+  </a>
+
+  <ul class="side-menu top">
+    <li class="">
+      <a href="./index.html" style="text-decoration: none;">
+        <i class='bx bxs-dashboard'></i>
+        <span class="text">Dashboard</span>
+      </a>
+    </li>
+    <li>
+      <a href="./side_pages/report.html">
+        <i class='bx bxs-shopping-bag-alt'></i>
+        <span class="text">Report</span>
+      </a>
+    </li>
+    <li class="active" >
+      <a href="#">
+        <i class='bx bxs-doughnut-chart'></i>
+        <span class="text">Analytics</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bxs-message-dots'></i>
+        <span class="text">Message</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bxs-group'></i>
+        <span class="text">Team</span>
+      </a>
+    </li>
+  </ul>
+
+  <ul class="side-menu">
+    <li>
+      <a href="#">
+        <i class='bx bxs-cog'></i>
+        <span class="text">Settings</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="logout">
+        <i class='bx bxs-log-out-circle'></i>
+        <span class="text">Logout</span>
+      </a>
+    </li>
+  </ul>
+</section>
+
+<!-- MAIN CONTENT -->
+<section id="content">
+    <!-- NAVBAR -->
+    <nav>
+        <i class='bx bx-menu' ></i>
+        <a href="#" class="nav-link;">Coimbatore</a>
+        <form action="#">
+            <div class="form-input">
+                <input type="search" placeholder="Search...">
+                <button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+            </div>
+        </form>
+        <input type="checkbox" id="switch-mode" hidden>
+        <label for="switch-mode" class="switch-mode"></label>
+        <!-- <a href="#" class="notification">
+            <i class='bx bxs-bell' ></i>
+            <span class="num">8</span>
+        </a> -->
+        <!-- <a href="#" class="profile">
+            <img src="img/people.png">
+        </a> -->
+    </nav>
+  <section class="analysis-section">
+    <div class="analysis-title">Service Analysis - Bluez Infomatic Solution</div>
+    <div class="services">
+      <div class="service-card">
+        <h3>XML Production</h3>
+        <p>We deliver structured, validated XML content tailored for publishing workflows and data transformation.</p>
+      </div>
+      <div class="service-card">
+        <h3>ePub Conversion</h3>
+        <p>Our team converts source files into ePub2/ePub3 format, ensuring compatibility across eReaders.</p>
+      </div>
+      <div class="service-card">
+        <h3>Social Media Marketing</h3>
+        <p>We build strong brand presence through targeted content strategies and performance tracking across social platforms.</p>
+      </div>
+      <div class="service-card">
+        <h3>Web Development</h3>
+        <p>Custom websites built with responsive design, SEO optimization, and scalable backend solutions.</p>
+      </div>
+      <div class="service-card">
+        <h3>EOD Reports</h3>
+        <p>End-of-Day reporting system to summarize daily productivity, task status, and performance tracking.</p>
+      </div>
+      <div class="service-card">
+        <h3>JSON Structuring</h3>
+        <p>We create and manage well-structured JSON data for API integrations, automation, and system communications.</p>
+      </div>
+      <div class="service-card">
+        <h3>InDesign Projects</h3>
+        <p>Expertise in layout design, typesetting, and formatting for publishing using Adobe InDesign workflows.</p>
+      </div>
+      <div class="service-card">
+        <h3>Integra</h3>
+        <p>Expertise in layout design, typesetting, and formatting for publishing using Adobe InDesign workflows.</p>
+      </div>
+    </div>
+  </section>
+</section>
+<script src="./index.js"></script>
+<script>
+  const toggleBtn = document.querySelector('.menu-toggle');
+  const sidebar = document.getElementById('sidebar');
+  const mainContent = document.getElementById('mainContent');
+
+  toggleBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('collapsed');
+    mainContent.classList.toggle('expanded');
+  });
+</script>
+
+</body>
+</html>
